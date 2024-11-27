@@ -57,10 +57,6 @@ function checkInputs(){
         return (formControl.className ==='form-control succcess');
     });
 
-    if (formIsValid) {
-        alert('Formulario completo');
-}
-
 }
 
 function setErrorFor(input, message){
