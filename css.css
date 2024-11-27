@@ -19,7 +19,7 @@ body{
 }
 
 
-.container.contato{
+.container-contato{
     background-color: rgba(235, 235, 235, 0.5);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.973);
@@ -28,7 +28,7 @@ body{
     overflow: hidden;
 }
 
-.header.contato{
+.header-contato{
     padding: 20px;
 }
 
