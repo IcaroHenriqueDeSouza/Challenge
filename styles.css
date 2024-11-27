@@ -18,7 +18,7 @@
     margin: 0 auto;
   }
   
-  /* Cabeçalho */
+ 
   header {
     background: #fff;
     color: #000;
@@ -50,7 +50,7 @@
     text-decoration: underline;
   }
   
-  /* Banner */
+ 
   .banner {
     background: url('https://esr.rnp.br/wp-content/uploads/2024/02/banner-medico-com-medico-trabalhando-no-laptop-scaled.jpg') no-repeat center center;
     background-size: cover; 
@@ -72,7 +72,7 @@
     background: #000;
   }
   
-  /* Inovação */
+  
   .innovation {
     padding: 2rem 0;
     text-align: center;
@@ -170,7 +170,7 @@
     border-radius: 5px;
   }
   
-  /* Rodapé */
+ 
   footer {
     background: #222;
     color: #fff;
@@ -178,26 +178,28 @@
     padding: 1rem 0;
   }
   /* Header */
-  header .header-container {
+  .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  header .logo-container {
+ .logo-container {
+    width: 40px; 
+    height: 40px;
+    border-radius: 5%; 
     display: flex;
     align-items: center;
     gap: 1rem;
   }
   
-  header .logo-icon {
+   .logo-icon {
     width: 40px; 
-    height: 40px;
-    object-fit: contain;
-    border-radius: 50%; 
+    height: 4px;
+    border-radius: 5%; 
   }
   
-  header .logo {
+  .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #000;
@@ -217,11 +219,16 @@
   }
   
   .logo-icon {
-    width: 40px; 
-    height: 40px; 
-    object-fit: contain;
+    width: 150px; 
+    height: 150px; 
+    object-fit: contain; 
     border-radius: 50%; 
-  }
+}
+
+.nav-links {
+  margin-left: auto; 
+}
+
   
   .logo {
     font-size: 1.5rem;
@@ -231,10 +238,8 @@
   }
   
   .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    gap: 20px; 
+}
   
   .logo-image {
     height: 50px; 
@@ -242,10 +247,11 @@
   }
   
   .logo-text {
-    font-size: 24px;
+    font-size: 240px; 
     font-weight: bold;
-  }
-  
+    color: #000;
+    margin-left: 100px; 
+}
   
   .faq-item {
     margin-bottom: 20px;
