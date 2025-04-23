@@ -1,85 +1,47 @@
 
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-
-        
-        if (answer.style.display === 'block') {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-            answer.style.maxHeight = '0';
-        }
-    });
-});
-
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
-
-
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-   
+  
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+  
     if (!name || !phone || !email || !message) {
-        alert('Por favor, preencha todos os campos!');
-        return;
+      alert('Por favor, preencha todos os campos!');
+      return;
     }
-
-
+  
     const confirmation = document.getElementById('confirmation');
-    confirmation.classList.remove('hidden');
+    confirmation.classList.remove('hidden', 'd-none');
     confirmation.textContent = `Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`;
-
-    
+  
     this.reset();
-});
+  });
 
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop,
-                behavior: 'smooth'
-            });
-        }
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
-});
+  });
 
-
-const backToTopButton = document.createElement('button');
+  const backToTopButton = document.createElement('button');
 backToTopButton.textContent = '↑';
-backToTopButton.className = 'back-to-top hidden';
+backToTopButton.className = 'back-to-top d-none position-fixed bottom-0 end-0 m-4 btn btn-primary';
 document.body.appendChild(backToTopButton);
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-        backToTopButton.classList.remove('hidden');
+      backToTopButton.classList.remove('d-none');
     } else {
-        backToTopButton.classList.add('hidden');
+      backToTopButton.classList.add('d-none');
     }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-        
-        item.classList.toggle('active');
-    });
-});
+  });
+  
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
