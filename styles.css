@@ -1,10 +1,13 @@
 
 
 
+
+
 body {
   background-color: #000;
   color: #333;
 }
+
 
 .container {
   width: 90%;
@@ -13,20 +16,17 @@ body {
 }
 
 
-header,
-.navbar-light .navbar-nav .nav-link
-
-
 .banner {
-    background: url('https://esr.rnp.br/wp-content/uploads/2024/02/banner-medico-com-medico-trabalhando-no-laptop-scaled.jpg')
-    no-repeat center/cover;
+  background: url('https://esr.rnp.br/wp-content/uploads/2024/02/banner-medico-com-medico-trabalhando-no-laptop-scaled.jpg')
+              no-repeat center/cover;
 }
+
 
 .contact-image {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: .5rem;  
+  border-radius: .5rem;
 }
 
 

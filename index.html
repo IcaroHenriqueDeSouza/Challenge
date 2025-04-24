@@ -4,41 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CuraConnect</title>
-    <link rel="stylesheet" href="styles.css">
     <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css"
   rel="stylesheet"
   integrity="sha384-…"
   crossorigin="anonymous"
->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-…"
-        crossorigin="anonymous"></script>
-<script src="script.js"></script>
+> 
+<link rel="stylesheet" href="styles.css">
+
 
 </head>
-<body class="font-sans bg-dark text-light">
+<body>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="img/logocuraconnect.png" alt="Logo" class="rounded-circle" width="40" height="40">
-            <span class="ms-2 fw-bold text-dark">CuraConnect</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#mainNav" aria-controls="mainNav"
-                  aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link fw-bold text-dark" href="index.html">Página inicial</a></li>
-              <li class="nav-item"><a class="nav-link fw-bold text-dark" href="solucao.html">Soluções</a></li>
-              <li class="nav-item"><a class="nav-link fw-bold text-dark" href="contato.html">Contato</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/logocuraconnect.png" alt="Logo" width="40" height="40" class="img-fluid">
+        <span class="ms-2 fw-bold text-dark">CuraConnect</span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-dark" href="index.html">Página inicial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-dark" href="solucao.html">Soluções</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-dark" href="contato.html">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
       
    
       <section class="banner text-center py-5" style="background: url('https://esr.rnp.br/wp-content/uploads/2024/02/banner-medico-com-medico-trabalhando-no-laptop-scaled.jpg') center/cover no-repeat;">
@@ -219,52 +223,55 @@
                 </div>
               </div>
         </div>
-    </section>
+      </section>
 
    
-    <<section id="contact" class="py-5 bg-white">
-        <div class="container">
-          <h2 class="mb-4">Fale Conosco</h2>
-          <div class="row g-4 align-items-center">
-            <div class="col-md-4">
-              <img src="https://techdicas.net.br/wp-content/uploads/2024/08/helpdesk-n1-n2-n3.jpg"
-                   class="img-fluid rounded" 
-                   alt="Entre em Contato">
-            </div>
-            <div class="col-md-8">
-              <form class="row g-3" id="contact-form">
-                <div id="confirmation" class="d-none alert alert-success mt-3">
-                <div class="col-md-6" id="confirmation" class="hidden"">
-                  <input type="text" class="form-control" placeholder="Seu Nome" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="tel" class="form-control" placeholder="Seu Telefone" required>
-                </div>
-                <div class="col-12">
-                  <input type="email" class="form-control" placeholder="Seu E‑mail" required>
-                </div>
-                <div class="col-12">
-                  <textarea class="form-control" rows="4" placeholder="Sua Mensagem" required></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Enviar</button>
-                </div>
-              </form>
-              </div>
-            </div>
-          </div>
+    <section id="contact" class="py-5 bg-white text-dark">
+      <div class="container">
+        <h2 class="mb-4">Fale Conosco</h2>
+        <div class="row g-4 align-items-center">
+          <div class="col-md-4">
+            <img
+            src="https://techdicas.net.br/wp-content/uploads/2024/08/helpdesk-n1-n2-n3.jpg"
+            alt="Entre em Contato"
+            class="img-fluid rounded"
+          >
         </div>
-      </section>
+        <div class="col-md-8">
+          <form id="contact-form" class="row g-3">
+            <div class="col-md-6">
+              <input id="name" type="text" class="form-control" placeholder="Seu Nome" required>
+            </div>
+            <div class="col-md-6">
+              <input id="phone" type="tel" class="form-control" placeholder="Seu Telefone" required>
+            </div>
+            <div class="col-12">
+              <input id="email" type="email" class="form-control" placeholder="Seu E‑mail" required>
+            </div>
+            <div class="col-12">
+              <textarea id="message" class="form-control" rows="4" placeholder="Sua Mensagem" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+          <div id="confirmation" class="d-none alert alert-success mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
       
 
     
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 CuraConnect. Todos os direitos reservados.</p>
-            <p></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 CuraConnect. Todos os direitos reservados.</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-…"
+  crossorigin="anonymous">
+</script>
+<script src="script.js"></script>
 </body>
 </html>
