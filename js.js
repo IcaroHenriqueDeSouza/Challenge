@@ -1,82 +1,31 @@
-const form = document.getElementById("form");
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const telefone = document.getElementById("telefone");
-const assunto = document.getElementById("assunto");
-const mensagem = document.getElementById("mensagem");
+  document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Impede envio automático
 
-form.addEventListener("submit", (e) =>{
-    e.preventDefault()
-    checkInputs()
-});
+    validarCampo("username", valor => valor.trim() !== "", "Por favor, insira seu nome.");
+    validarCampo("email", valor => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor), "Digite um email válido.");
+    // Adicione mais chamadas `validarCampo()` para outros campos aqui
+  });
 
-function checkInputs(){
-    const usernameValue = username.value
-    const emailValue = email.value
-    const telefoneValue = telefone.value
-    const assuntoValue = assunto.value
-    const mensagemValue = mensagem.value
+  function validarCampo(id, validacao, mensagemErro) {
+    const input = document.getElementById(id);
+    const valor = input.value;
+    const erro = document.getElementById("error-" + id);
+    const iconeErro = document.getElementById("icon-error-" + id);
+    const iconeSucesso = document.getElementById("icon-success-" + id);
 
-    if (usernameValue===''){
-        setErrorFor(username,'É necessário inserir o nome');
-    } else{
-        setSuccessFor (username);
-    }
-
-    if(emailValue === ''){
-        setErrorFor(email, 'É necessário inserir o email');
-    } else if (!checkEmail(emailValue)){
-        setErrorFor(email, 'É necessário inserir o email corretamente')
+    if (!validacao(valor)) {
+      input.classList.add("is-invalid");
+      input.classList.remove("is-valid");
+      erro.textContent = mensagemErro;
+      erro.classList.remove("d-none");
+      iconeErro.classList.remove("d-none");
+      iconeSucesso.classList.add("d-none");
     } else {
-        setSuccessFor(email);
+      input.classList.remove("is-invalid");
+      input.classList.add("is-valid");
+      erro.classList.add("d-none");
+      iconeErro.classList.add("d-none");
+      iconeSucesso.classList.remove("d-none");
     }
+  }
 
-    if (telefoneValue===''){
-        setErrorFor(telefone,'É necessário inserir o número de telefone');
-    } else if (telefoneValue.length < 9) {
-        setErrorFor(telefone, "O número deve conter 9 caracteres")
-    } else {
-        setSuccessFor (telefone);
-    }
-
-    if (assuntoValue===''){
-        setErrorFor(assunto,'É necessário inserir o assunto');
-    } else{
-        setSuccessFor (assunto);
-    }
-
-    if (mensagemValue===''){
-        setErrorFor(mensagem,'É necessário inserir a mensagem');
-    } else{
-        setSuccessFor (mensagem);
-    }
-
-    const formControls = form.querySelectorAll('.form-control');
-
-    const formIsValid = [...formControls].every(formControl => {
-        return (formControl.className ==='form-control succcess');
-    });
-
-}
-
-function setErrorFor(input, message){
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    
-    // add classe de error
-    formControl.className = "form-control error";
-    small.innerText = message;
-}
-
-function setSuccessFor(input){
-    const  formControl = input.parentElement;
-
-    //add classe de success
-    formControl.className = "form-control success"
-}
-
-function checkEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-    );
-}
